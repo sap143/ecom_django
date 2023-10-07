@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/order_confirmation.css' %}"> 
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <div class="order-details">
+        <p>Thank you for your order!</p>
+        <p>Your order ID is {{ order.id }}.</p>
+        <p>Total Price: ${{ order.total_price }}</p>
+    </div>
+    <a href="{% url 'product_list' %}" class="back-to-shop">Back to Shop</a>
+</body>
+</html>

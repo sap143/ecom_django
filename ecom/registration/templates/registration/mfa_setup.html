@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Setup</title>
+    <link rel="stylesheet" href="{% static 'css/mfa.css' %}"> <!-- Add CSS styling -->
+</head>
+<body>
+    <h2>Set up Multi-Factor Authentication (MFA)</h2>
+    <p>Scan the QR code below with your authenticator app:</p>
+    <img src="{{ base64_image }}" alt="QR Code for MFA">
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+      </form>
+</body>
+</html>
